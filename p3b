@@ -1,0 +1,27 @@
+package sss;
+import java.io.*;
+class outer {
+    int outdata = 10;
+    void Display() {
+        inner inobj = new inner();
+        System.out.println("Acessing from outer class ");
+        System.out.println ("Value of outdata is "+outdata);
+        System.out.println("Value of indatat is "+inobj.indata); 
+    }
+    class inner {
+        int indata = 40;
+        void inmethod() {
+            System.out.println("Acessing from inner class");
+            System.out.println("The Sum of outdata and indata : " +(outdata + indata));
+        }
+    }
+}
+public class AccessMain {
+
+    public static void main(String[] args) {
+        outer outobj = new outer();
+        outobj.Display();
+        outer.inner inobj1 = outobj.new inner();
+        inobj1.inmethod();
+    }
+}
