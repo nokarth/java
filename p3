@@ -1,0 +1,57 @@
+package sss;
+class MyClass {
+    int x;
+    MyClass(){
+        System.out.println("Inside MyClass().");
+        x=0;
+    }
+    
+    MyClass (int i ){
+        System.out.println("Inside MyClass (int).");
+        x=i;
+    }
+    MyClass (double d){
+        System.out.println("Inside MyClass (double).");
+        x= (int) d; 
+    }
+    MyClass (int i, int j){
+        System.out.println("Inside MyClass (int, int).");
+        x=i+j;
+    }
+}
+
+public class OverloadConsDemo {
+    public static void main(String[] args) {
+        MyClass tl = new MyClass();
+        MyClass t2 = new MyClass(88);
+        MyClass t3 = new MyClass(17.23);
+        MyClass t4 = new MyClass(2, 4);
+        
+        System.out.println("t1.x: " + tl.x);
+        System.out.println("t2.x: " +t2.x); 
+        System.out.println("t3.x: " +t3.x);
+        System.out.println("t4.x: " +t4.x);
+    }
+}
+
+
+
+package sss;
+public class OverloadMethodDemo {
+     public static void main(String[] args) {
+         Addn s = new Addn();
+         s.Sum(12,16);
+         s.Sum(12,16,20);
+     }
+}
+
+class Addn{
+    void Sum(int a, int b)
+    {
+        System.out.println("Sum :" +(a+b));
+    }
+    void Sum(int a, int b, int c)
+    {
+        System.out.println("Sum :" +(a+b+c));
+    }
+}
